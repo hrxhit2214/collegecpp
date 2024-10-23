@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+class sum{
+public:
+sum(inta , int b){
+cout<<"SUM OF INTEGERS:"<<(a+b)<<endl;
+}
+sum(char a, char b){
+cout<<"SUM OF ASCII VALUES OF CHARACTERS:"<<(static_cast<int (a)> + static_cast<int(b)>)<<endl;
+}
+sum(float a, float b){
+cout<<"SUM OF FLOAT:" <<(a+b)<<endl;
+}
+};
+int main(){
+sum intsum(5,18);
+sum charsum('a'+'b');
+sum floatsum(1.67+3.33);
+return 0;
+}
