@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+class A {
+protected:
+    int valueA;
+
+public:
+    A(int v) : valueA(v) {} 
+};
+class B : public A {
+protected:
+    int valueB;
+
+public:
+    B(int vA, int vB) : A(vA), valueB(vB) {} 
+    void displayB() {
+        cout << "Value from class B: " << valueB << endl;
+    }
+};
+class C : public A {
+protected:
+    int valueC;
+
+public:
+    C(int vA, int vC) : A(vA), valueC(vC) {} 
+
+    void displayC() {
+        cout << "Value from class C: " << valueC << endl;
+    }
+};
+class D : public A {
+protected:
+    int valueD;
+
+public:
+    D(int vA, int vD) : A(vA), valueD(vD) {} 
+    void displayD() {
+        cout << "Value from class D: " << valueD << endl;
+    }
+};
+class E : public B {
+protected:
+    int valueE;
+
+public:
+    E(int vA, int vB, int vE) : B(vA, vB), valueE(vE) {} 
+    void displayE() {
+        cout << "Value from class E: " << valueE << endl;
+    }
+};
+int main() {
+    B objB(1, 2);
+    C objC(3, 4);
+    D objD(5, 6);
+    E objE(7, 8, 9);
+    objB.displayB();
+    objC.displayC();
+    objD.displayD();
+    objE.displayB(); 
+    objE.displayE(); 
+    return 0;
+}
