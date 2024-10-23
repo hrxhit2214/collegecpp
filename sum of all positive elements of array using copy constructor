@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+class ArraySum {
+private:
+    vector<int> arr;
+public:
+    ArraySum(const vector<int>& inputArray) : arr(inputArray) {}
+    ArraySum(const ArraySum& other) : arr(other.arr) {}
+    int sumOfPositives() const {
+        int sum = 0;
+        for (int num : arr) {
+            if (num > 0) {
+                sum += num;
+            }
+        }
+        return sum;
+    }
+};
+int main() {
+    vector<int> inputArray = {1, -2, 3, 4, -5, 6};
+    ArraySum originalArray(inputArray);
+    ArraySum copiedArray = originalArray;
+    cout << "Sum of positive integers: " << copiedArray.sumOfPositives() << endl;
+    return 0;
+}
