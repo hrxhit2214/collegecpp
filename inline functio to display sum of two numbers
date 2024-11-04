@@ -1,0 +1,16 @@
+#include <iostream>
+
+class Student {
+public:
+    inline void displaySum(int a, int b) {
+        std::cout << "The sum of " << a << " and " << b << " is " << (a + b) << std::endl;
+    }
+};
+
+int main() {
+    Student student;
+    int num1 = 5;
+    int num2 = 10;
+    student.displaySum(num1, num2);
+    return 0;
+}
